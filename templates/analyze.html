@@ -1,16 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Analyze-Text</title>
 </head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+    }
+
+    header {
+        display: flex;
+        background-color: bisque;
+        align-items: center;
+        color: black;
+        font-weight: 500;
+        justify-content: center;
+        padding: 5px;
+        border-bottom: 10px;
+        border-color: black;
+
+    }
+
+    p {
+        display: flex;
+        padding: 5px;
+        background-color: white;
+    }
+
+    #p-2{
+        display: flex;
+        padding: 5px;
+        background-color: bisque;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    #p-2 a{
+        text-decoration:none;  
+    }
+
+    #p-2 a:hover{
+        text-decoration:underline;  
+    }
+    
+</style>
+
 <body>
-    <h1>Your analyzed text is : {{purpose}} </h1>
+    <header>{{purpose}} </header>
     <p>
         {{analyzed_text}}
     </p>
-    
+
+    <p id="p-2">
+        <a href="/">Back to Home</a>
+    </p>
+
 </body>
+
 </html>

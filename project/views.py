@@ -13,11 +13,12 @@ def index(request):
 def analyze(request):
 
     the_text = request.GET.get('text','default')
-    removepunc_option = request.GET.get('removepunc','off')
-    fullcaps_option = request.GET.get('fullcaps','off')
+    removepunc = request.GET.get('removepunc','off')
+    fullcaps = request.GET.get('fullcaps','off')
     newlineremove_option = request.GET.get('newlineremove','off')
 
-    if removepunc_option == 'on':
+    
+    if removepunc == 'on':
         punctuations = '''!()-{}[];:'"|\?/>.<,~`@#$%^&*_+='''
         analyzed = ""
         for char in the_text:
@@ -27,20 +28,20 @@ def analyze(request):
         params = {'purpose':'Removed Punctuations', 'analyzed_text':analyzed}
         return render(request,'analyze.html',params)
 
-    elif(fullcaps_option == 'on') :
+    elif fullcaps == 'on' :
         analyzed = ""
         for char in the_text:
-            analyzed = analyzed + analyzed.upper()
+            analyzed = analyzed + char.upper()
 
-        params = {'purpose':'Capitalized Text', 'analyzed_text':analyzed}
+        params = {'purpose':'FULL CAPITALIZED TEXT', 'analyzed_text':analyzed}
         return render(request,'analyze.html',params)
 
 
-    elif(newlineremove_option == 'on'):
+    elif newlineremove_option == 'on':
         analyzed = ""
         for char in the_text:
             if char != "\n":
-                analyzed = analyzed + analyzed.upper()
+                analyzed = analyzed + char
 
         params = {'purpose':'Removed New Lines', 'analyzed_text':analyzed}
         return render(request,'analyze.html',params)
