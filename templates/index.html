@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home@TextMagic </title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+    }
+
+    header h1 {
+        display: flex;
+        justify-content: center;
+        background-color: bisque;
+    }
+
+    p {
+        display: flex;
+        justify-content: center;
+        padding-top: 5px;
+        padding-bottom: 0px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+
+    }
+
+
+    form button {
+        align-self: center;
+    }
+
+
+    form .options {
+        align-self: center;
+    }
+</style>
+
+<body>
+
+    <header>
+        <h1> Welcome to TextMagic!</h1>
+    </header>
+
+    <p>Enter your text below.</p>
+
+    <form class='form' action='/analyze' method='get'>
+        <textarea name="text"></textarea>
+
+        <br>
+        <button type="submit">Analyze Text</button>
+
+        <br>
+        <input class="options" type="radio" name="removepunc">
+        <label class="options" for="rempunc">Remove Punctuations</label>
+
+        <br>
+        <input class="options" type="radio" name="fullcaps">
+        <label class="options" for="fullcaps">UPPERCASE</label>
+
+        <br>
+        <input class="options" type="radio" name="newlineremove">
+        <label class="options" for="newlineremove">Remove New Line</label>
+    </form>
+
+</body>
+
+</html>
